@@ -1,2 +1,2 @@
 #!/bin/bash
-export CFILE=1-main.c && gcc $CFILE -o 1-compiler && ./1-compiler
+gcc -c $CFILE -o `echo $CFILE | cut -d. -f1`.o
