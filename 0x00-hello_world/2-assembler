@@ -1,2 +1,2 @@
 #!/bin/bash
-export CFILE=main.c && gcc -S $CFILE -o $(echo $CFILE | cut -d. -f1).s
+export CFILE=2-main.c && gcc -S $CFILE -o $(echo $CFILE | cut -d. -f1).s
