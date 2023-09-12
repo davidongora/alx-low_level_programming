@@ -15,3 +15,4 @@ int _isalpha(int c)
 	    c <= 'Z'))
 		return (1);
 	return (0);
+}
