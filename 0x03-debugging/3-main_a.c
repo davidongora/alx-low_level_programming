@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 
 /* Function prototypes */
 int convert_day(int month, int day);
