@@ -2,7 +2,7 @@
 
 /**
  * _puts_recursion(char *s);- function that prints a string
- * s is a pointer
+ * @s: is a pointer string to print
  * return - always a success
  *
  */
