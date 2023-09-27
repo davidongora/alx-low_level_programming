@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * _puts_recursion(char *s);- function  that prints a string followe b a new line
- * returb - always a success
+ * _puts_recursion(char *s);- function that prints a string
+ * return - always a success
  *
  */
 
