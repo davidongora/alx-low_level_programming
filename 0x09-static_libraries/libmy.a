@@ -1,0 +1,17 @@
+/* main.h */
+#ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
+void _puts(char *s);
+
+#endif /* MAIN_H */
+
+/* main.c */
+#include "main.h"
+
+int main(void)
+{
+    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+    return 0;
+}
