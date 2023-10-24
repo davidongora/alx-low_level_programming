@@ -1,38 +1,40 @@
 #include "lists.h"
-#include <stdlib.h>
+
 /**
- * delete_nodeint_at_index - deletes a node from a specific index number
- * @head: pointer to head of list
- * @index: index to be deleted
- * Return: 1 if success else -1
+ * delete_nodeint_at_index - deletes a node in a linked list at a certain index
+ * @head: pointer to the first element in the list
+ * @index: index of the node to delete
+ *
+ * Return: 1 (Success), or -1 (Fail)
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *present, *tmp;
-	unsigned int j;
+  listint_t *current_node, *previous_node;
 
-	if (head == NULL || *head == NULL)
-	{
-		return (-1);
-	}
-	if (index == 0)
-	{
-		tmp = *head;
-		*head = (*head)->next;
-		free(tmp);
-		return (1);
-	}
-	present = *head;
-	for (j = 0; j < index - 1 && present != NULL; j++)
-	{
-		present = present->next;
-	}
-	if (present == NULL || present->next == NULL)
-	{
-		return (-1);
-	}
-	tmp = present->next;
-	present->next = tmp->next;
-	free(tmp);
-	return (1);
+  if (*head == NULL || index == 0) {
+    // Delete the head node.
+    current_node = *head;
+    *head = (*head)->next;
+    free(current_node);
+    return 1;
+  }
+
+  // Find the previous node to the node to be deleted.
+  previous_node = *head;
+  current_node = (*head)->next;
+  for (unsigned int i = 1; i < index; i++) {
+    if (current_node == NULL) {
+      // The index is out of bounds.
+      return -1;
+    }
+    previous_node = current_node;
+    current_node = current_node->next;
+  }
+
+  // Delete the node.
+  previous_node->next = current_node->next;
+  free(current_node);
+
+  return 1;
 }
+
